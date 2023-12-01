@@ -74,8 +74,4 @@ export const GlobalStyles = createGlobalStyle`
         max-width: 350px;
       }
     }
-
-    .active {
-      color: ${({ theme }) => theme.colors.primaryColor};
-    }
 `;
