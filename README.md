@@ -70,7 +70,7 @@ This feature stores the theme and tasks on localStorage, so when the user closes
 The project has been built with the following technologies:
 
 - [React](https://react.dev/)
-- [react-components](https://styled-components.com/)
+- [styled-components](https://styled-components.com/)
 - [Vite](https://vitejs.dev/)
 
 ## Run the aplicattion
