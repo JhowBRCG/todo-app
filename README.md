@@ -2,17 +2,13 @@
 
 <img src="./docs/todo-main.png">
 
-## About the project
-
-The project's about a ToDo app where the user can add tasks to be completed to a list of tasks. I also applied a feature to storage data on local storage. Which means that after the user closes his browser, the data will not be reset, consequently being stored on the local storage like the theme and the tasks done earlier.
-
 ## Table of Contents
 
 - [About the project](#about-the-project)
 - [Features](#features)
   - [Add tasks](#add-tasks)
-  - [Remove task](#remove-task)
-  - [Complete task](#remove-task)
+  - [Remove tasks](#remove-tasks)
+  - [Complete tasks](#remove-tasks)
   - [Filter tasks](#filter-tasks)
   - [Theme switcher](#theme-switcher)
   - [Local storage](#local-storage)
@@ -20,6 +16,10 @@ The project's about a ToDo app where the user can add tasks to be completed to a
 - [Run the application](#run-the-aplicattion)
 - [Author](#author)
 - [License](#license)
+
+## About the project
+
+The project's about a ToDo app where the user can add tasks to be completed to a list of tasks. I also applied a feature to storage data on local storage. Which means that after the user closes his browser, the data will not be reset, consequently being stored on the local storage like the theme and the tasks done earlier.
 
 ## Features
 
@@ -31,13 +31,13 @@ The user will be able to add tasks just by typing in the input area and sending 
 
 <img src="./docs/add-task.gif">
 
-### Remove task
+### Remove tasks
 
 The user will be able to remove tasks just by clicking the X button.
 
 <img src="./docs/remove-task.gif">
 
-### Complete task
+### Complete tasks
 
 The user will be able to complete a task just by clicking on the rounded button.
 
