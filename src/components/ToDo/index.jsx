@@ -61,23 +61,25 @@ export const ToDo = () => {
   return (
     <>
       <ToDoForm toDo={toDo} setTodo={setToDo} addToDo={addToDo} />
-      <S.List>
-        {filteredToDos.map((todo) => (
-          <ToDoList
-            key={todo.id}
-            todo={todo}
-            completeToDo={completeToDo}
-            removeToDo={removeToDo}
-          />
-        ))}
-      </S.List>
-      {filteredToDos.length === 0 && <NoTasksLeft toDoList={toDoList} />}
-      <ToDoFooter
-        toDoList={toDoList}
-        setFilter={setFilter}
-        clearCompletedToDos={clearCompletedToDos}
-        currentFilter={filter}
-      />
+      <S.SectionList>
+        <S.List>
+          {filteredToDos.map((todo) => (
+            <ToDoList
+              key={todo.id}
+              todo={todo}
+              completeToDo={completeToDo}
+              removeToDo={removeToDo}
+            />
+          ))}
+        </S.List>
+        {filteredToDos.length === 0 && <NoTasksLeft toDoList={toDoList} />}
+        <ToDoFooter
+          toDoList={toDoList}
+          setFilter={setFilter}
+          clearCompletedToDos={clearCompletedToDos}
+          currentFilter={filter}
+        />
+      </S.SectionList>
     </>
   );
 };

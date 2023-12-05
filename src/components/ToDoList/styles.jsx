@@ -31,7 +31,7 @@ export const RemoveButton = styled.button`
   margin: auto 2.5rem auto auto;
 `;
 
-export const ToDoList = styled.li`
+export const ToDoList = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
@@ -44,11 +44,6 @@ export const ToDoList = styled.li`
   border-bottom: 1px solid ${({ theme }) => theme.colors.checkColor};
   font-size: 1.8rem;
   text-decoration: ${({ $isCompleted }) => $isCompleted && `line-through`};
-
-  &:first-child {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }
 
   &:hover {
     ${RemoveButton} {
