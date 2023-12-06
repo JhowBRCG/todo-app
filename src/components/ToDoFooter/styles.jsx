@@ -9,6 +9,7 @@ export const Footer = styled.div`
   background: ${({ theme }) => theme.colors.toDoBg};
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  box-shadow: 0 9px 10px #00000022;
   @media screen and (max-width: 425px) {
     padding: 2.4rem 2.5rem;
   }
@@ -39,6 +40,7 @@ export const FilterMobile = styled.ul`
   background: ${({ theme }) => theme.colors.toDoBg};
   padding: 2rem 2.5rem;
   margin-top: 3rem;
+  box-shadow: 0 0 10px #00000022;
 
   button {
     font-weight: 700;
