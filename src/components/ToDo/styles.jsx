@@ -8,3 +8,9 @@ export const SectionList = styled.section`
   overflow: hidden;
   box-shadow: 0 0 10px #00000022;
 `;
+
+export const ReorderText = styled.p`
+  margin-top: 5rem;
+  color: ${({ theme }) => theme.colors.textColorDarken};
+  font-size: 1.7rem;
+`;

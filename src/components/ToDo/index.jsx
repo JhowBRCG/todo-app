@@ -82,6 +82,7 @@ export const ToDo = () => {
         clearCompletedToDos={clearCompletedToDos}
         currentFilter={filter}
       />
+      <S.ReorderText>Drag and drop to reorder list</S.ReorderText>
     </>
   );
 };
