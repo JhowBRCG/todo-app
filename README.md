@@ -12,6 +12,7 @@
   - [Filter tasks](#filter-tasks)
   - [Theme switcher](#theme-switcher)
   - [Local storage](#local-storage)
+  - [Reorder List](#reorder-list)
 - [Built with](#built-with)
 - [Run the application](#run-the-aplicattion)
 - [Author](#author)
@@ -59,6 +60,12 @@ _light theme_
 _dark theme_
 <img src="./docs/todo-main.png">
 
+### Reorder List
+
+It's possible to change the order of the list by dragging the task and moving it. Made using the **Framer Motion** library
+
+<img src="./docs/reorder-list.gif">
+
 ### Local Storage
 
 This feature stores the theme and tasks on localStorage, so when the user closes the browser or the page, the data will not reset.
@@ -72,6 +79,7 @@ The project has been built with the following technologies:
 - [React](https://react.dev/)
 - [styled-components](https://styled-components.com/)
 - [Vite](https://vitejs.dev/)
+- [Framer-Motion](https://www.framer.com/motion/)
 
 ## Run the aplicattion
 
