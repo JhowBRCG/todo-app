@@ -38,12 +38,12 @@ export const ToDoList = styled.div`
   position: relative;
   gap: 2rem;
   padding: 2rem 2.5rem;
-  background: ${({ theme }) => theme.colors.toDoBg};
   color: ${({ theme, $isCompleted }) =>
     $isCompleted ? theme.colors.checkedText : theme.colors.textColor};
   border-bottom: 1px solid ${({ theme }) => theme.colors.checkColor};
   font-size: 1.8rem;
   text-decoration: ${({ $isCompleted }) => $isCompleted && `line-through`};
+  cursor: grab;
 
   &:hover {
     ${RemoveButton} {

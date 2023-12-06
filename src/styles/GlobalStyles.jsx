@@ -11,7 +11,6 @@ export const GlobalStyles = createGlobalStyle`
       font-size: 1.6rem;
       font-family: ${({ theme }) => theme.font.primaryFont};
       font-weight: 400; 
-      transition: all ease-out 200ms;
     }
 
     html {
@@ -53,7 +52,8 @@ export const GlobalStyles = createGlobalStyle`
     input {
       background: none;
       outline: none;
-      border: none;
+      border: none;  
+      transition: all ease-out 200ms;
     }
 
     h1 {
@@ -64,6 +64,10 @@ export const GlobalStyles = createGlobalStyle`
 
     ul,li {
       list-style: none;
+    }
+
+    button {
+      transition: all ease-out 200ms;
     }
 
     .container {

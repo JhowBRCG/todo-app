@@ -7,8 +7,8 @@ export const Footer = styled.div`
   width: 100%;
   padding: 1.7rem 2.5rem;
   background: ${({ theme }) => theme.colors.toDoBg};
-  box-shadow: 0 9px 10px #00000022;
-
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   @media screen and (max-width: 425px) {
     padding: 2.4rem 2.5rem;
   }

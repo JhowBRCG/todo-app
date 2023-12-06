@@ -7,6 +7,7 @@ export const Background = styled.div`
   background-repeat: no-repeat;
   background-size: 100% 40%;
   padding-inline: 1rem;
+  transition: all ease-out 200ms;
 
   @media screen and (max-width: 768px) {
     background-image: url(${({ theme }) => theme.bg.mobile});
