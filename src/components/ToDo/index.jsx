@@ -1,6 +1,7 @@
 import * as S from "./styles";
 import { useState, useEffect } from "react";
 import { ToDoForm, ToDoList, ToDoFooter, NoTasksLeft } from "..";
+import { Reorder } from "framer-motion";
 
 export const ToDo = () => {
   const storedToDoList = JSON.parse(localStorage.getItem("todoList"));
@@ -62,24 +63,25 @@ export const ToDo = () => {
     <>
       <ToDoForm toDo={toDo} setTodo={setToDo} addToDo={addToDo} />
       <S.SectionList>
-        <S.List>
+        <Reorder.Group values={toDoList} onReorder={setToDoList}>
           {filteredToDos.map((todo) => (
-            <ToDoList
-              key={todo.id}
-              todo={todo}
-              completeToDo={completeToDo}
-              removeToDo={removeToDo}
-            />
+            <Reorder.Item axis="y" key={todo.id} value={todo}>
+              <ToDoList
+                todo={todo}
+                completeToDo={completeToDo}
+                removeToDo={removeToDo}
+              />
+            </Reorder.Item>
           ))}
-        </S.List>
+        </Reorder.Group>
         {filteredToDos.length === 0 && <NoTasksLeft toDoList={toDoList} />}
-        <ToDoFooter
-          toDoList={toDoList}
-          setFilter={setFilter}
-          clearCompletedToDos={clearCompletedToDos}
-          currentFilter={filter}
-        />
       </S.SectionList>
+      <ToDoFooter
+        toDoList={toDoList}
+        setFilter={setFilter}
+        clearCompletedToDos={clearCompletedToDos}
+        currentFilter={filter}
+      />
     </>
   );
 };
