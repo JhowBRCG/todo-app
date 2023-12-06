@@ -6,7 +6,8 @@ import { Reorder } from "framer-motion";
 export const ToDo = () => {
   const storedToDoList = JSON.parse(localStorage.getItem("todoList"));
   const [toDoList, setToDoList] = useState(storedToDoList || []);
-  const [filter, setFilter] = useState("all");
+  const [filterStatus, setFilterStatus] = useState("all");
+  const [filteredTasks, setFilteredTasks] = useState(toDoList);
   const [toDo, setToDo] = useState("");
 
   useEffect(() => {
@@ -44,12 +45,14 @@ export const ToDo = () => {
     });
   };
 
-  const filteredToDos = toDoList.filter((todo) => {
-    if (filter === "all") return true;
-    if (filter === "completed") return todo.isCompleted;
-    if (filter === "uncompleted") return !todo.isCompleted;
-    return true;
-  });
+  useEffect(() => {
+    if (filterStatus === "uncompleted") {
+      return setFilteredTasks(toDoList.filter((todo) => !todo.isCompleted));
+    } else if (filterStatus === "completed") {
+      return setFilteredTasks(toDoList.filter((todo) => todo.isCompleted));
+    }
+    return setFilteredTasks(toDoList);
+  }, [toDoList, filterStatus]);
 
   const clearCompletedToDos = () => {
     setToDoList((prevList) => {
@@ -63,8 +66,8 @@ export const ToDo = () => {
     <>
       <ToDoForm toDo={toDo} setTodo={setToDo} addToDo={addToDo} />
       <S.SectionList>
-        <Reorder.Group values={toDoList} onReorder={setToDoList}>
-          {filteredToDos.map((todo) => (
+        <Reorder.Group values={filteredTasks} onReorder={setFilteredTasks}>
+          {filteredTasks.map((todo) => (
             <Reorder.Item axis="y" key={todo.id} value={todo}>
               <ToDoList
                 todo={todo}
@@ -74,13 +77,13 @@ export const ToDo = () => {
             </Reorder.Item>
           ))}
         </Reorder.Group>
-        {filteredToDos.length === 0 && <NoTasksLeft toDoList={toDoList} />}
+        {filteredTasks.length === 0 && <NoTasksLeft toDoList={toDoList} />}
       </S.SectionList>
       <ToDoFooter
         toDoList={toDoList}
-        setFilter={setFilter}
+        setFilter={setFilterStatus}
         clearCompletedToDos={clearCompletedToDos}
-        currentFilter={filter}
+        currentFilter={filterStatus}
       />
       <S.ReorderText>Drag and drop to reorder list</S.ReorderText>
     </>
